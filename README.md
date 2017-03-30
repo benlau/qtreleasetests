@@ -1,4 +1,4 @@
-Run unit tests on Qt 5.0
+Run unit tests on Qt 5.9
 =========================================
 [![Build Status](https://www.travis-ci.org/benlau/qtreleasetests.svg?branch=master)](https://www.travis-ci.org/benlau/qtreleasetests)
 
