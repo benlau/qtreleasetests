@@ -20,6 +20,11 @@ script:
     - wget https://download.qt.io/archive/online_installers/2.0/qt-unified-linux-x64-2.0.5-online.run
     - VERBOSE=true QT_CI_PACKAGES="qt.59.gcc_64" extract-qt-installer qt-unified-linux-x64-2.0.5-online.run Qt
     - ls Qt
-    - git clone git@github.com:benlau/qredux.git
+    - QT_HOME=`find Qt -name gcc_64`
+    - echo $QT_HOME
+    - export PATH=$QT_HOME:$PATH
+    - git clone https://github.com/benlau/qredux.git
     - ./test.sh qredux/tests/qreduxtests/qreduxtests.pro
+    - git clone https://github.com/benlau/asyncfuture.git
+    - ./test.sh asyncfuture/tests/asyncfutureunittests/asyncfutureunittests.pro
 
