@@ -30,4 +30,6 @@ script:
     - ./test.sh `pwd`/asyncfuture/tests/asyncfutureunittests/asyncfutureunittests.pro
     - git clone https://github.com/benlau/quickflux.git
     - ./test.sh $PWD/`find quickflux/tests -name *.pro`
+    - git clone https://github.com/benlau/sparkqml.git
+    - ./test.sh $PWD/`find sparkqml/tests -name *.pro`
 
