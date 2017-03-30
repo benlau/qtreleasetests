@@ -24,7 +24,7 @@ script:
     - echo $QT_HOME
     - export PATH=$QT_HOME:$PATH
     - git clone https://github.com/benlau/qredux.git
-    - ./test.sh qredux/tests/qreduxtests/qreduxtests.pro
+    - ./test.sh `pwd`/qredux/tests/qreduxtests/qreduxtests.pro
     - git clone https://github.com/benlau/asyncfuture.git
-    - ./test.sh asyncfuture/tests/asyncfutureunittests/asyncfutureunittests.pro
+    - ./test.sh `pwd`/asyncfuture/tests/asyncfutureunittests/asyncfutureunittests.pro
 
