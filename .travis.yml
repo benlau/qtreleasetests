@@ -22,10 +22,12 @@ script:
     - ls Qt
     - QT_HOME=$PWD/`find Qt -name gcc_64`
     - echo $QT_HOME
-    - export PATH=$QT_HOME:$PATH
+    - export PATH=${QT_HOME}/bin:$PATH
     - which qmake
     - git clone https://github.com/benlau/qredux.git
     - ./test.sh `pwd`/qredux/tests/qreduxtests/qreduxtests.pro
     - git clone https://github.com/benlau/asyncfuture.git
     - ./test.sh `pwd`/asyncfuture/tests/asyncfutureunittests/asyncfutureunittests.pro
+    - git clone https://github.com/benlau/quickflux.git
+    - ./test.sh $PWD/`find quickflux/tests -name *.pro`
 
