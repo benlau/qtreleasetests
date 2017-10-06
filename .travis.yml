@@ -19,6 +19,9 @@ script:
     - source qtci/path.env
     - ./install-qt-5.9.2 
     - source qt-5.9.2.env
+    - ls Qt
+    - find Qt -name "qmake"
+    - echo $PATH
     - which qmake
     - git clone https://github.com/benlau/qredux.git
     - ./test.sh `pwd`/qredux/tests/qreduxtests/qreduxtests.pro
