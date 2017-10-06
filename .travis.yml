@@ -21,6 +21,7 @@ script:
     - source qt-5.9.2.env
     - ls Qt
     - find Qt -name "qmake"
+    - find Qt/5.9.2
     - echo $PATH
     - which qmake
     - git clone https://github.com/benlau/qredux.git
