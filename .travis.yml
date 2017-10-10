@@ -24,6 +24,7 @@ script:
     - echo $QT_HOME
     - export PATH=${QT_HOME}/bin:$PATH
     - which qmake
+    - qmake --version
     - git clone https://github.com/benlau/qredux.git
     - ./test.sh `pwd`/qredux/tests/qreduxtests/qreduxtests.pro
     - git clone https://github.com/benlau/asyncfuture.git
