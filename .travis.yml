@@ -18,7 +18,7 @@ script:
     - git clone https://github.com/benlau/qtci.git
     - source qtci/path.env
     - wget https://download.qt.io/archive/online_installers/2.0/qt-unified-linux-x64-2.0.5-online.run
-    - VERBOSE=true QT_CI_PACKAGES="qt.59.gcc_64" extract-qt-installer qt-unified-linux-x64-2.0.5-online.run `pwd`/Qt
+    - QT_CI_PACKAGES="qt.59.gcc_64" extract-qt-installer qt-unified-linux-x64-2.0.5-online.run `pwd`/Qt
     - ls Qt
     - QT_HOME=$PWD/`find Qt -name gcc_64`
     - echo $QT_HOME
@@ -33,5 +33,5 @@ script:
     - ./test.sh $PWD/`find quickflux/tests -name *.pro`
     - git clone https://github.com/benlau/sparkqml.git
     - ./test.sh $PWD/`find sparkqml/tests/sparkqmltests -name *.pro`
-
+    - ./test.sh qtbug-62666/qtbug-62666.pro
 
