@@ -27,14 +27,14 @@ script:
     - export PATH=${QT_HOME}/bin:$PATH
     - which qmake
     - qmake --version
-    - git clone https://github.com/benlau/qredux.git
-    - ./test.sh `pwd`/qredux/tests/qreduxtests/qreduxtests.pro
-    - git clone https://github.com/benlau/asyncfuture.git
-    - ./test.sh `pwd`/asyncfuture/tests/asyncfutureunittests/asyncfutureunittests.pro
-    - git clone https://github.com/benlau/quickflux.git
-    - ./test.sh $PWD/`find quickflux/tests -name *.pro`
-    - git clone https://github.com/benlau/sparkqml.git
-    - ./test.sh $PWD/`find sparkqml/tests/sparkqmltests -name *.pro`
+    #- git clone https://github.com/benlau/qredux.git
+    #- ./test.sh `pwd`/qredux/tests/qreduxtests/qreduxtests.pro
+    #- git clone https://github.com/benlau/asyncfuture.git
+    #- ./test.sh `pwd`/asyncfuture/tests/asyncfutureunittests/asyncfutureunittests.pro
+    #- git clone https://github.com/benlau/quickflux.git
+    #- ./test.sh $PWD/`find quickflux/tests -name *.pro`
+    #- git clone https://github.com/benlau/sparkqml.git
+    #- ./test.sh $PWD/`find sparkqml/tests/sparkqmltests -name *.pro`
     - ./run-test.sh "QTBUG-62666" $PWD/qtbug-62666/qtbug-62666.pro
     - cat result.json
     - node logger/upload.js ${TARGET_NAME}
