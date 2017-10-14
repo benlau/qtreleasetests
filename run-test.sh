@@ -8,6 +8,7 @@ cd -
 
 if [ $? -eq 0 ]; then
     node logger/add.js "$1" pass
+    exit -1
 else
     node logger/add.js "$1" fail
 fi

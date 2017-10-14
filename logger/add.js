@@ -14,4 +14,5 @@ var test = {
 content.tests.push(test);
 
 shell.ShellString(JSON.stringify(content,null,4)).to("result.json");
+console.log(name + " : " + result);
 console.log("Updated result.json");
