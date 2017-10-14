@@ -18,7 +18,8 @@ script:
     - git clone https://github.com/benlau/qtci.git
     - source qtci/path.env
     - wget -q https://download.qt.io/archive/online_installers/3.0/qt-unified-linux-x64-3.0.1-online.run
-    - QT_CI_PACKAGES="${TARGET_PACKAGE}" extract-qt-installer qt-unified-linux-x64-3.0.1-online.run `pwd`/Qt
+    - echo $TARGET_PACKAGE
+    - QT_CI_PACKAGES=${TARGET_PACKAGE} extract-qt-installer qt-unified-linux-x64-3.0.1-online.run `pwd`/Qt
     - node logger/create.js $PWD/Qt/components.xml ${TARGET_NAME} ${TARGET_PACKAGE}
     - QT_HOME=$PWD/`find Qt -name gcc_64`
     - echo $QT_HOME

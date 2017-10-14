@@ -19,7 +19,7 @@ var packages = data.Packages.Package;
 var index = packages.findIndex(function(o) { return o.Name[0] === packageName});
 
 if (index < 0) {
-    console.err(packageName, "not found");
+    console.error(packageName, "not found");
     console.log(JSON.stringify(packages,null,4));
     return -1;
 }
