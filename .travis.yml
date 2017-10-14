@@ -1,7 +1,7 @@
 language : cpp
 dist: trusty
 env:
-  - DISPLAY=:99.0
+  - DISPLAY=:99.0 TARGET_NAME="Qt 5.9.2" TARGET_PACKAGE="qt.592.gcc_64"
 addons:
   apt:
     packages:
@@ -12,7 +12,7 @@ before_install:
     - export GOPATH=`pwd`/gosrc
     - export PATH=`pwd`/gosrc/bin:$PATH
     - go get qpm.io/qpm
-    - find $GOPATH
+    - (cd logger;npm install)
     - sh -e /etc/init.d/xvfb start
 script:
     - git clone https://github.com/benlau/qtci.git
@@ -22,15 +22,18 @@ script:
     - ls Qt
     - find Qt -name "qmake"
     - echo $PATH
+    - node logger/create.js $PWD/Qt/components.xml "${TARGET_NAME}" "${TARGET_PACKAGE}"
     - which qmake
     - qmake --version
     - git clone https://github.com/benlau/qredux.git
-    - ./test.sh `pwd`/qredux/tests/qreduxtests/qreduxtests.pro
+    - ./run-test.sh "QRedux" `pwd`/qredux/tests/qreduxtests/qreduxtests.pro
     - git clone https://github.com/benlau/asyncfuture.git
-    - ./test.sh `pwd`/asyncfuture/tests/asyncfutureunittests/asyncfutureunittests.pro
+    - ./run-test.sh "AsyncFuture" `pwd`/asyncfuture/tests/asyncfutureunittests/asyncfutureunittests.pro
     - git clone https://github.com/benlau/quickflux.git
-    - ./test.sh $PWD/`find quickflux/tests -name *.pro`
+    - ./run-test.sh "QuickFlux" $PWD/`find quickflux/tests -name *.pro`
     - git clone https://github.com/benlau/sparkqml.git
-    - ./test.sh $PWD/`find sparkqml/tests/sparkqmltests -name *.pro`
-    - ./test.sh $PWD/qtbug-62666/qtbug-62666.pro
+    - ./run-test.sh "SparkQML" $PWD/`find sparkqml/tests/sparkqmltests -name *.pro`
+    - ./run-test.sh "QTBUG-62666" $PWD/qtbug-62666/qtbug-62666.pro
+    - cat result.json
+    - node logger/upload.js ${TARGET_NAME}
 
