@@ -1,7 +1,7 @@
 language : cpp
 dist: trusty
 env:
-  - DISPLAY=:99.0 TARGET_NAME="Qt 5.10" TARGET_PACKAGE="preview.qt.qt5.5100.gcc_64"
+  - DISPLAY=:99.0 TARGET_NAME="Qt 5.10" TARGET_PACKAGE="preview.qt.qt5.510.gcc_64"
 addons:
   apt:
     packages:
