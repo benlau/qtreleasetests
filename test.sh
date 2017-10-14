@@ -3,5 +3,5 @@
 rm -rf build
 mkdir build
 cd build
-run-unittests $1
+QT_CI_SILENT=true run-unittests $1
 
