@@ -19,7 +19,7 @@ script:
     - source qtci/path.env
     - wget https://download.qt.io/archive/online_installers/3.0/qt-unified-linux-x64-3.0.1-online.run
     - QT_CI_PACKAGES="preview.qt.qt5.510.gcc_64" extract-qt-installer qt-unified-linux-x64-3.0.1-online.run `pwd`/Qt
-    - node logger/create.js Qt/components "Qt 5.10" preview.qt.qt5.5100.gcc_64
+    - node logger/create.js $PWD/Qt/components "Qt 5.10" preview.qt.qt5.5100.gcc_64
     - QT_HOME=$PWD/`find Qt -name gcc_64`
     - echo $QT_HOME
     - export PATH=${QT_HOME}/bin:$PATH
@@ -34,5 +34,6 @@ script:
     - git clone https://github.com/benlau/sparkqml.git
     - ./test.sh $PWD/`find sparkqml/tests/sparkqmltests -name *.pro`
     - ./run-test.sh "QTBUG-62666" $PWD/qtbug-62666/qtbug-62666.pro
-    - node logger/upload.js
+    - cat result.json
+    - node logger/upload.js "Qt 5.10"
 
