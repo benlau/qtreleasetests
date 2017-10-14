@@ -1,8 +1,7 @@
 language : cpp
 dist: trusty
 env:
-  - DISPLAY=:99.0
-  - ENV_NAME="Qt 5.10"
+  - DISPLAY=:99.0 ENV_NAME="Qt 5.10"
 addons:
   apt:
     packages:
