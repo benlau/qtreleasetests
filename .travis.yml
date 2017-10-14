@@ -25,6 +25,7 @@ script:
     - node logger/create.js $PWD/Qt/components.xml "${TARGET_NAME}" "${TARGET_PACKAGE}"
     - which qmake
     - qmake --version
+    - ./run-test.sh "QTBUG-62666" $PWD/qtbug-62666/qtbug-62666.pro
     - git clone https://github.com/benlau/qredux.git
     - ./run-test.sh "QRedux" `pwd`/qredux/tests/qreduxtests/qreduxtests.pro
     - git clone https://github.com/benlau/asyncfuture.git
@@ -33,7 +34,6 @@ script:
     - ./run-test.sh "QuickFlux" $PWD/`find quickflux/tests -name *.pro`
     - git clone https://github.com/benlau/sparkqml.git
     - ./run-test.sh "SparkQML" $PWD/`find sparkqml/tests/sparkqmltests -name *.pro`
-    - ./run-test.sh "QTBUG-62666" $PWD/qtbug-62666/qtbug-62666.pro
     - cat result.json
     - node logger/upload.js ${TARGET_NAME}
 
