@@ -33,5 +33,6 @@ script:
     - ./test.sh $PWD/`find quickflux/tests -name *.pro`
     - git clone https://github.com/benlau/sparkqml.git
     - ./test.sh $PWD/`find sparkqml/tests/sparkqmltests -name *.pro`
-    - ./test.sh $PWD/qtbug-62666/qtbug-62666.pro
+    - ./run-test.sh "QTBUG-62666" $PWD/qtbug-62666/qtbug-62666.pro
+    - node logger/upload.js
 
