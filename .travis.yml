@@ -17,9 +17,10 @@ before_install:
 script:
     - git clone https://github.com/benlau/qtci.git
     - source qtci/path.env
-    - wget https://download.qt.io/archive/online_installers/2.0/qt-unified-linux-x64-2.0.5-online.run
-    - QT_CI_PACKAGES="qt.qt5.5100.gcc_64" extract-qt-installer qt-unified-linux-x64-2.0.5-online.run `pwd`/Qt
+    - wget https://download.qt.io/archive/online_installers/3.0/qt-unified-linux-x64-3.0.1-online.run
+    - QT_CI_PACKAGES="qt.qt5.5100.gcc_64" extract-qt-installer qt-unified-linux-x64-3.0.1-online.run `pwd`/Qt
     - QT_HOME=$PWD/`find Qt -name gcc_64`
+    - ls Qt
     - echo $QT_HOME
     - export PATH=${QT_HOME}/bin:$PATH
     - which qmake
