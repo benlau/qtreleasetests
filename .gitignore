@@ -37,3 +37,4 @@ Makefile*
 CMakeLists.txt.user
 *.qmlc
 *.jsc
+node_modules
