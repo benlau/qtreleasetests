@@ -20,6 +20,7 @@ var test = {
 
 if (!test.pass) {
     var reason = shell.cat(argv._[2]).toString();
+    reason = removeNonPrintableChar(reason);
     test.reason = reason;
 }
 
