@@ -4,7 +4,14 @@ var argv = require('optimist').argv;
 var name = argv._[0];
 var result = argv._[1];
 
-var content = JSON.parse(shell.cat("result.json").toString());
+
+function removeNonPrintableChar(txt) {
+    return txt.replace(/[\x00-\x09\x0B-\x0C\x0E-\x1F\x7F-\x9F]/g, '');
+}
+
+var content = shell.cat("result.json").toString();
+content = removeNonPrintableChar(content);
+content = JSON.parse(content);
 
 var test = {
     name: name,
