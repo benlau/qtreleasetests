@@ -5,8 +5,9 @@ var name = argv._[0];
 var result = argv._[1];
 
 
-function removeNonPrintableChar(txt) {
-    return txt.replace(/[\x00-\x09\x0B-\x0C\x0E-\x1F\x7F-\x9F]/g, '');
+function removeNonPrintableChar(txt) {    
+    txt = txt.replace(/[\x00-\x09\x0B-\x0C\x0E-\x1F\x7F-\x9F‘’]/g, '');
+    return txt;
 }
 
 var content = shell.cat("result.json").toString();
