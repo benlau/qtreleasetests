@@ -30,14 +30,14 @@ script:
     - which qmake
     - qmake --version
     - ./run-test.sh "QTBUG-62666" $PWD/qtbug-62666/qtbug-62666.pro
-    #- git clone https://github.com/benlau/qredux.git
-    #- ./run-test.sh "QRedux" `pwd`/qredux/tests/qreduxtests/qreduxtests.pro
-    #- git clone https://github.com/benlau/asyncfuture.git
-    #- ./run-test.sh "AsyncFuture" `pwd`/asyncfuture/tests/asyncfutureunittests/asyncfutureunittests.pro
-    #- git clone https://github.com/benlau/quickflux.git
-    #- ./run-test.sh "QuickFlux" $PWD/`find quickflux/tests -name *.pro`
-    #- git clone https://github.com/benlau/sparkqml.git
-    #- ./run-test.sh "SparkQML" $PWD/`find sparkqml/tests/sparkqmltests -name *.pro`
+    - git clone https://github.com/benlau/qredux.git
+    - ./run-test.sh "QRedux" `pwd`/qredux/tests/qreduxtests/qreduxtests.pro
+    - git clone https://github.com/benlau/asyncfuture.git
+    - ./run-test.sh "AsyncFuture" `pwd`/asyncfuture/tests/asyncfutureunittests/asyncfutureunittests.pro
+    - git clone https://github.com/benlau/quickflux.git
+    - ./run-test.sh "QuickFlux" $PWD/`find quickflux/tests -name *.pro`
+    - git clone https://github.com/benlau/sparkqml.git
+    - ./run-test.sh "SparkQML" $PWD/`find sparkqml/tests/sparkqmltests -name *.pro`
     - cat result.json
     - node logger/upload.js ${TARGET_NAME}
 

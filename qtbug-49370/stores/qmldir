@@ -1,0 +1,4 @@
+module stores
+singleton A 0.1 A.qml
+singleton B 0.1 B.qml
+singleton C 0.1 C.qml
