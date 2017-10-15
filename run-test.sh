@@ -4,7 +4,7 @@ rm -rf build
 mkdir build
 cd build
 QT_CI_SILENT=true run-unittests $2 2>&1 | tee log
-CODE=$?
+CODE=${PIPESTATUS[0]} 
 cd -
 
 if [ $CODE -eq 0 ]; then
