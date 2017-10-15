@@ -11,6 +11,11 @@ var test = {
     pass: result === "pass"
 }
 
+if (!test.pass) {
+    var reason = shell.cat(argv._[2]).toString();
+    test.reason = reason;
+}
+
 content.tests.push(test);
 
 shell.ShellString(JSON.stringify(content,null,4)).to("result.json");
