@@ -9,7 +9,13 @@ var db = Hubdb({
  branch: 'db'
 });
 
-var content = JSON.parse(shell.cat("result.json").toString());
+function removeNonPrintableChar(txt) {
+    return txt.replace(/[\x00-\x09\x0B-\x0C\x0E-\x1F\x7F-\x9F]/g, '');
+}
+
+var content = shell.cat("result.json").toString();
+content = removeNonPrintableChar(content);
+content = JSON.parse(content);
 
 db.list(function(err,res) {
     console.log(content.name);
