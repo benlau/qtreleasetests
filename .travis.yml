@@ -31,6 +31,8 @@ script:
     - qmake --version
     - ./run-test.sh "QTBUG-62666" $PWD/qtbug-62666/qtbug-62666.pro
     - ./run-test.sh "QTBUG-57545" $PWD/qtbug-57545/qtbug-57545.pro
+    - ./run-test.sh "QTBUG-57640" $PWD/qtbug-57640/qtbug-57640.pro
+
     - git clone https://github.com/benlau/qredux.git
     - ./run-test.sh "QRedux" `pwd`/qredux/tests/qreduxtests/qreduxtests.pro
     - git clone https://github.com/benlau/asyncfuture.git
