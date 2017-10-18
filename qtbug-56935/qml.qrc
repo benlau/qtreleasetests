@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ui/BaseItem.qml</file>
+        <file>ui/Crash.qml</file>
+    </qresource>
+</RCC>
