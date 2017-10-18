@@ -29,8 +29,12 @@ script:
     - node logger/create.js $PWD/Qt/components.xml "${TARGET_NAME}" "${TARGET_PACKAGE}"
     - which qmake
     - qmake --version
-    - ./run-test.sh "QTBUG-62666" $PWD/qtbug-62666/qtbug-62666.pro
+    - ./run-test.sh "QTBUG-49370 - Use Singleton object from other Singleton object within the same package will hang" $PWD/qtbug-49370/qtbug-49370.pro
+    - ./run-test.sh "QTBUG-56935  QQmlEngine crashing when trying to clear the component cache " $PWD/qtbug-56935/qtbug-56935.pro
     - ./run-test.sh "QTBUG-57545" $PWD/qtbug-57545/qtbug-57545.pro
+    - ./run-test.sh "QTBUG-57640" $PWD/qtbug-57640/qtbug-57640.pro
+    - ./run-test.sh "QTBUG-62666" $PWD/qtbug-62666/qtbug-62666.pro
+
     - git clone https://github.com/benlau/qredux.git
     - ./run-test.sh "QRedux" `pwd`/qredux/tests/qreduxtests/qreduxtests.pro
     - git clone https://github.com/benlau/asyncfuture.git
