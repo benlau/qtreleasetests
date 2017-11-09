@@ -31,9 +31,9 @@ script:
     - qmake --version
     - ./run-test.sh "QTBUG-49370 - Use Singleton object from other Singleton object within the same package will hang" $PWD/qtbug-49370/qtbug-49370.pro
     - ./run-test.sh "QTBUG-56935  QQmlEngine crashing when trying to clear the component cache " $PWD/qtbug-56935/qtbug-56935.pro
-    - ./run-test.sh "QTBUG-57545" $PWD/qtbug-57545/qtbug-57545.pro
-    - ./run-test.sh "QTBUG-57640" $PWD/qtbug-57640/qtbug-57640.pro
-    - ./run-test.sh "QTBUG-62666" $PWD/qtbug-62666/qtbug-62666.pro
+    - ./run-test.sh "QTBUG-57545 The result of Array.sort() is incorrect if shift() was called" $PWD/qtbug-57545/qtbug-57545.pro
+    - ./run-test.sh "QTBUG-57640 - Crash on loading Javascript file" $PWD/qtbug-57640/qtbug-57640.pro
+    - ./run-test.sh "QTBUG-62666- JS `delete` operator leads to segfaults on garbage collecton" $PWD/qtbug-62666/qtbug-62666.pro
 
     - git clone https://github.com/benlau/qredux.git
     - ./run-test.sh "QRedux" `pwd`/qredux/tests/qreduxtests/qreduxtests.pro
@@ -43,6 +43,8 @@ script:
     - ./run-test.sh "QuickFlux" $PWD/`find quickflux/tests -name *.pro`
     - git clone https://github.com/benlau/sparkqml.git
     - ./run-test.sh "SparkQML" $PWD/`find sparkqml/tests/sparkqmltests -name *.pro`
+    - git clone https://github.com/e-fever/snapshottesting.git
+    - ./run-test.sh "Library - SnapshotTesting" $PWD/`find snapshottesting/tests/snapshottestingunittests/ -name *.pro`
     - cat result.json
     - node logger/upload.js ${TARGET_NAME}
 
