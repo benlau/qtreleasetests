@@ -3,7 +3,7 @@
 rm -rf build
 mkdir build
 cd build
-QT_CI_SILENT=true run-unittestsa --qpa-platform minimal $2 2>&1 | tee log
+QT_CI_SILENT=true run-unittests --qpa-platform minimal $2 2>&1 | tee log
 CODE=${PIPESTATUS[0]} 
 cd -
 
