@@ -20,7 +20,7 @@ script:
     - wget -q https://download.qt.io/archive/online_installers/3.0/qt-unified-linux-x64-3.0.2-online.run
     - export QT_CI_PACKAGES=${TARGET_PACKAGE} 
     - echo $QT_CI_PACKAGES
-    - extract-qt-installer qt-unified-linux-x64-3.0.1-online.run `pwd`/Qt
+    - extract-qt-installer qt-unified-linux-x64-3.0.2-online.run `pwd`/Qt
     - QT_HOME=$PWD/`find Qt -name gcc_64`
     - export PATH=${QT_HOME}/bin:$PATH
     - ls Qt
