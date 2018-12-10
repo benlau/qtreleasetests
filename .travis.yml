@@ -1,7 +1,7 @@
 language : cpp
 dist: trusty
 env:
-  - DISPLAY=:99.0 QTVER="5.12.0" TARGET_NAME="Qt 5.12.0" TARGET_PACKAGE="qt.qt5.5112.gcc_64"
+  - DISPLAY=:99.0 QTVER="5.12.0" TARGET_NAME="Qt 5.12.0" TARGET_PACKAGE="qt.qt5.5120.gcc_64"
 addons:
   apt:
     packages:
@@ -20,8 +20,7 @@ script:
     - export QT_CI_PACKAGES=${TARGET_PACKAGE} 
     - echo $QT_CI_PACKAGES
     - export QT_CI_DOWNLOADER='wget -q -c'
-    - install-qt ${QTVER}
-    - extract-qt-installer qt-unified-linux-x64-3.0.2-online.run `pwd`/Qt
+    - install-qt ${QTVER} `pwd`/Qt
     - QT_HOME=$PWD/`find Qt -name gcc_64`
     - export PATH=${QT_HOME}/bin:$PATH
     - ls Qt
