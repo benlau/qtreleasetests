@@ -4,9 +4,11 @@ env:
   - DISPLAY=:99.0 QTVER="5.12.0" TARGET_NAME="Qt 5.12.0" TARGET_PACKAGE="qt.qt5.5120.gcc_64" MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
     packages:
-    - valgrind
-    - g++-4.9
+      - valgrind
+      - g++-4.9
 compiler:
   - gcc
 before_install:
