@@ -1,7 +1,7 @@
 language : cpp
 dist: trusty
 env:
-  - DISPLAY=:99.0 QTVER="5.12" TARGET_NAME="Qt 5.12" TARGET_PACKAGE="qt.qt5.5112.gcc_64"
+  - DISPLAY=:99.0 QTVER="5.12.0" TARGET_NAME="Qt 5.12.0" TARGET_PACKAGE="qt.qt5.5112.gcc_64"
 addons:
   apt:
     packages:
