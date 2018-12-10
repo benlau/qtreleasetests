@@ -19,7 +19,7 @@ script:
     - source qtci/path.env
     - export QT_CI_PACKAGES=${TARGET_PACKAGE} 
     - echo $QT_CI_PACKAGES
-    - export QTCI_DOWNLOADER='wget -q -c'
+    - export QT_CI_DOWNLOADER='wget -q -c'
     - install-qt ${QTVER}
     - extract-qt-installer qt-unified-linux-x64-3.0.2-online.run `pwd`/Qt
     - QT_HOME=$PWD/`find Qt -name gcc_64`
