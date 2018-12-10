@@ -1,11 +1,12 @@
 language : cpp
 dist: trusty
 env:
-  - DISPLAY=:99.0 QTVER="5.12.0" TARGET_NAME="Qt 5.12.0" TARGET_PACKAGE="qt.qt5.5120.gcc_64"
+  - DISPLAY=:99.0 QTVER="5.12.0" TARGET_NAME="Qt 5.12.0" TARGET_PACKAGE="qt.qt5.5120.gcc_64" MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"
 addons:
   apt:
     packages:
     - valgrind
+    - g++-4.9
 compiler:
   - gcc
 before_install:
@@ -15,12 +16,13 @@ before_install:
     - (cd logger;npm install)
     - sh -e /etc/init.d/xvfb start
 script:
+    - eval "${MATRIX_EVAL}"
     - git clone https://github.com/benlau/qtci.git
     - source qtci/path.env
     - export QT_CI_PACKAGES=${TARGET_PACKAGE} 
     - echo $QT_CI_PACKAGES
     - export QT_CI_DOWNLOADER='wget -q -c'
-    - install-qt ${QTVER} `pwd`/Qt
+    - install-qt ${QTVER} `pwd`
     - QT_HOME=$PWD/`find Qt -name gcc_64`
     - export PATH=${QT_HOME}/bin:$PATH
     - ls Qt
